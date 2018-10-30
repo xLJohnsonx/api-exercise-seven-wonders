@@ -1,10 +1,33 @@
 require 'httparty'
+require 'awesome_print'
 
-#Starter Code:
+# get my key from top secret file
+my_key = File.open('GoogleAPIKEY.txt').read
+
+# arr of 7 wonders
 seven_wonders = ["Great Pyramid of Giza", "Hanging Gardens of Babylon", "Colossus of Rhodes", "Pharos of Alexandria", "Statue of Zeus at Olympia", "Temple of Artemis", "Mausoleum at Halicarnassus"]
+# new empty hash
+seven_wonders_hash = {}
 
+seven_wonders.each do |wonder|
+  response = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{wonder}&key=#{my_key}
+")
+  # ap JSON.parse(response.body)
+  # loop through response results to get geocodes for each location
+  response["results"].each do |result|
+    ap wonder
+    lat = result["geometry"]["location"]["lat"]
+    ap lat
 
+    lng = result["geometry"]["location"]["lng"]
+    ap lng
+    puts "***"
 
+    seven_wonders_hash[wonder] = {"lat" => lat, "lng" => lng}
+  end
+end
+
+ap seven_wonders_hash
 
 
 
