@@ -1,7 +1,7 @@
 # API Exercise: Seven Wonders of the World
 
 You are planning a trip to see all seven wonders of the world! How exciting! And now you need to plan your trip, using the coordinates of all seven wonders. Being a developer, why do this yourself when you can have a computer do it for you?!  
-
+`
 Using the list of all the wonders, make a collection of all their coordinates using httparty and Google Map's API.
 
 **Use this:**
@@ -14,7 +14,7 @@ seven_wonders = ["Great Pyramid of Giza", "Hanging Gardens of Babylon", "Colossu
 {"Great Pyramid of Giza"=>{"lat"=>29.9792345, "lng"=>31.1342019}, "Hanging Gardens of Babylon"=>{"lat"=>32.5422374, "lng"=>44.42103609999999}, "Colossus of Rhodes"=>{"lat"=>36.45106560000001, "lng"=>28.2258333}, "Pharos of Alexandria"=>{"lat"=>38.7904054, "lng"=>-77.040581}, "Statue of Zeus at Olympia"=>{"lat"=>37.6379375, "lng"=>21.6302601}, "Temple of Artemis"=>{"lat"=>37.9498715, "lng"=>27.3633807}, "Mausoleum at Halicarnassus"=>{"lat"=>37.038132, "lng"=>27.4243849}}
 ```
 
-The first part of this challenge will be that Google’s api for maps is rather large. How will you find the very specific api request needed to obtain the necessary data, based only on the information provided in the seven_wonders array?  Hint: There is a way to do it without a key, but do whatever way you find that works.
+The first part of this challenge will be that Google’s api for maps is rather large. How will you find the very specific api request needed to obtain the necessary data, based only on the information provided in the seven_wonders array?  Hint: **You will need an API key,** and you can either create an account with [Google's cloud system GCP,](https://console.cloud.google.com/getting-started) and generate a key, or obtain one from your instructors.
 
 The second part will be understanding how to interact with the response data to target the specific parts needed to get the result we want.
 
